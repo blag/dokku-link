@@ -74,7 +74,9 @@ case "$1" in
     VAR="${NAME}:${ALIAS}"
     echo "-----> Unlinking $VAR from $APP"
     LINK_TEMP_FILE="${LINK_FILE}.new"
-    cat "${LINK_FILE}" | grep -v "^${VAR}$" > ${LINK_TEMP_FILE}
+    echo "^${VAR}\$"
+    cat "${LINK_FILE}" | grep -v "^${VAR}\$"
+    cat "${LINK_FILE}" | grep -v "^${VAR}\$" > ${LINK_TEMP_FILE}
     mv -f ${LINK_TEMP_FILE} ${LINK_FILE}
   ;;
 
