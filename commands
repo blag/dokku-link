@@ -75,7 +75,7 @@ case "$1" in
     echo "-----> Unlinking $VAR from $APP"
     LINK_TEMP_FILE="${LINK_FILE}.new"
     cat "${LINK_FILE}" | grep -v "^${VAR}$" > ${LINK_TEMP_FILE}
-    mv ${LINK_TEMP_FILE} ${LINK_FILE}
+    mv -f ${LINK_TEMP_FILE} ${LINK_FILE}
   ;;
 
   help)
